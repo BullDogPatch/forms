@@ -6,6 +6,7 @@ form.addEventListener('submit', (e) => {
   const formData = new FormData(form);
   const formEntries = Object.fromEntries(formData);
   console.log(formEntries);
+  form.reset();
 });
 
 const hobbyForm = document.querySelector('.hobbies-form');
@@ -29,4 +30,6 @@ hobbyForm.addEventListener('submit', (e) => {
   details.appendChild(name);
   details.appendChild(location);
   details.appendChild(favouriteHobby);
+
+  hobbyForm.reset();
 });
