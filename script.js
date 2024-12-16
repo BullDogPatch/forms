@@ -26,10 +26,19 @@ hobbyForm.addEventListener('submit', (e) => {
   const favouriteHobby = document.createElement('p');
   favouriteHobby.textContent = formData.get('favourite-hobby');
 
+  const favouriteBand = document.createElement('p');
+  favouriteBand.textContent = `${
+    formData.get('band') === 'Spice Girls'
+      ? 'Really the Spice Girls'
+      : formData.get('band')
+  }`;
+
   const details = document.querySelector('.hobby-details');
+  details.innerHTML = '';
   details.appendChild(name);
   details.appendChild(location);
   details.appendChild(favouriteHobby);
+  details.appendChild(favouriteBand);
 
   hobbyForm.reset();
 });
